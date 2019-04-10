@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Car, Cars} from './car.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'angular-ngrx-start';
+  public cars: Car[] = [
+    new Car('Ford', 'some day', 'Focus', false, 1),
+    new Car('Audi', 'some day2', 'A4', false, 2)
+  ]
+
+  onAdd(car: Car) {
+    this.cars.push(car)
+  }
 }
