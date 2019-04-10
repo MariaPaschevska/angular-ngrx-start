@@ -1,8 +1,11 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="container">
+  <app-cars-form></app-cars-form>
+
+  <div class="list-group mt-4">
+    <app-car
+    *ngFor="let car of [1, 2, 3]"></app-car>
+  </div>
+
 </div>
 
 <router-outlet></router-outlet>
