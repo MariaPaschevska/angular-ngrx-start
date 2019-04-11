@@ -1,4 +1,5 @@
 import {Car} from '../car.model';
+import {AddCar, CAR_ACTION} from "./cars.action";
 
 const initialSTate = {
   cars: [
@@ -7,6 +8,14 @@ const initialSTate = {
   ]
 }
 
-export function carsReducer(state = initialSTate, action) {
-
+export function carsReducer(state = initialSTate, action: AddCar) {
+  switch (action.type) {
+    case CAR_ACTION.ADD_CAR:
+      return {
+        ...state,
+        cars: [...state.cars, action.payload]
+      }
+    default:
+      return state
+  }
 }
