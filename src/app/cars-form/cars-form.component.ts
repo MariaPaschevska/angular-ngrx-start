@@ -9,10 +9,10 @@ import * as moment from 'moment'
 })
 export class CarsFormComponent implements OnInit {
 
-  carName: string = ''
-  carModel: string= ''
-  private id: number = 2
-  @Output() addCar = new EventEmitter<Car>()
+  carName: string = '';
+  carModel: string= '';
+  private id: number = 2;
+  @Output() addCar = new EventEmitter<Car>();
 
   constructor() { }
 
@@ -26,8 +26,8 @@ export class CarsFormComponent implements OnInit {
 
     const car = new Car(
       this.carName,
-      this.carModel,
       moment().format('DD.MM.YY'),
+      this.carModel,
       false,
       this.id
     )
