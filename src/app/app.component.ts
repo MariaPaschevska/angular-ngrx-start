@@ -1,19 +1,20 @@
-import { Component } from '@angular/core';
-import {Car, Cars} from './car.model';
+import {Component, OnInit} from '@angular/core';
+import {Cars} from './car.model';
+import {select, Store} from '@ngrx/store';
+import {AppState} from './redux/app.state';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
-  public cars: Car[] = [];
+export class AppComponent implements OnInit {
+  public carState: Observable<Cars>
 
-  onAdd(car: Car) {
-    this.cars.push(car)
-  }
+  constructor(private store: Store<AppState>) {}
 
-  onDelete(car: Car) {
-    this.cars = this.cars.filter(c => c.id !== car.id)
+  ngOnInit() {
+    this.carState = this.store.pipe(select('carPage'));
   }
 }
