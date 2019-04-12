@@ -27,6 +27,11 @@ export function carsReducer(state = initialSTate, action: CarsAction) {
         ...state,
         cars: [...state.cars]
       }
+    case CAR_ACTION.LOAD_CARS:
+      return {
+        ...state,
+        cars: [...action.payload]
+      }
     default:
       return state
   }

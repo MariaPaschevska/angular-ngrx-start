@@ -4,6 +4,7 @@ import * as moment from 'moment'
 import {Store} from '@ngrx/store';
 import {AppState} from '../redux/app.state';
 import {AddCar} from '../redux/cars.action';
+import {CarsService} from "../cars.service";
 
 @Component({
   selector: 'app-cars-form',
@@ -16,7 +17,10 @@ export class CarsFormComponent {
   carModel: string= '';
   private id: number = 2;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(
+    private store: Store<AppState>,
+    private service: CarsService
+  ) { }
 
   onAdd() {
     if (this.carModel === '' || this.carName === '') return
@@ -38,7 +42,6 @@ export class CarsFormComponent {
   }
 
   onLoad() {
-
+    this.service.loadCars()
   }
-
 }
