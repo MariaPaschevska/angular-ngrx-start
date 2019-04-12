@@ -1,11 +1,7 @@
-import {Car} from '../car.model';
 import {CAR_ACTION, CarsAction} from "./cars.action";
 
 const initialSTate = {
-  cars: [
-    new Car('Ford', 'some day', 'Focus', false, 1),
-    new Car('Audi', 'some day2', 'A4', false, 2)
-  ]
+  cars: []
 }
 
 export function carsReducer(state = initialSTate, action: CarsAction) {

@@ -8,11 +8,11 @@
       "isSold": false
     },
     {
-      "id": 2,
-      "name": "Audi",
-      "date": "04/12/2017",
-      "model": "RX6",
-      "isSold": false
+      "name": "BMW",
+      "date": "12.04.19",
+      "model": "a1",
+      "isSold": true,
+      "id": 2
     }
   ]
 }
